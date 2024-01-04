@@ -1,0 +1,32 @@
+.learn-text {
+    font-size: 50px;
+    line-height: 62px;
+    letter-spacing: 0;
+    color: #3c3c3c;
+}
+.font-fam-bold {
+    font-family: Gilroy-Bold, sans-serif !important;
+}
+.learn-text-sm {
+    text-align: center;
+    font-size: 22px;
+    line-height: 25px;
+    letter-spacing: 0;
+    color: #888;
+}
+
+.font-fam-med, .font-fam-medium {
+    font-family: Gilroy-Medium, sans-serif !important;
+}
+.pt-3 {
+    padding-top: 1rem!important;
+}
+.teacher {
+    background: linear-gradient(87deg, #5a4bda, #eb427e);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.teacher, .testimonials, .why-phy {
+    -webkit-text-fill-color: transparent;
+}

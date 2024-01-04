@@ -1,0 +1,279 @@
+use pp_classes;
+SELECT * FROM admin;
+insert into admin(id,fullname,about,company,job,address,phone,email_id,profileimage) values(2,'p prasanjeet','PP Classes provides a mature environment where sound work ethics, self-discipline and acquisition of independent learning skills are fostered. Staff is deeply committed to the academic progress and welfare of students and all students are encouraged to interact closely with their teachers and seek help at any time. There is a positive learning environment where students will constantly get a chance achieve their best and have a strong sense of identification. The institute aims to develop students who have a passion for life a desire to reach their full potential and to have a life long love of learning. To play your role effectively we at PP classes strive habits, attitude & values. My good wishes for a successful future to all.'
+,'PP Classes',	'TEACHERs',	'6B 666 Village Near Patia Railway Crossing , BBSR',	9338234305	,'ppclassesbbsr@gmail.com',	'../profile/unnamed (1).jpg');
+SELECT * FROM all_pagess;
+insert into all_pagess(id, regular, shortterm, crash, contact, contactus_description) values(2,'Regular Course12'	,'The most common way people give up their power is by thinking they don’t have any option.” Most students tend to believe that they don’t have many options to choose from after their 10th exams. Even if they do find diverse options, they feel con...'	,'The most common way people give up their power is by thinking they don’t have any option.” Most students tend to believe that they don’t have many options to choose from after their 10th exams. Even if they do find diverse options, they feel con...'	,'ContactUs'	,'Do you have any questions?Please do not hesitate to contact us directly. Our team will get back to you within a matter of hours to help you.');
+SELECT * FROM admin_pass;
+SELECT * FROM all_pagess;--
+SELECT * FROM contact;--
+SELECT * FROM courses;--
+SELECT * FROM header_footer;--
+SELECT * FROM home;--
+SELECT * FROM imagechanges;--
+SELECT * FROM register;--
+SELECT * FROM registerpage;--
+SELECT * FROM resource_gallery_img;--
+SELECT * FROM testimonial;
+SELECT * FROM testimonials;
+SELECT * FROM contact ORDER BY id DESC;
+select * from admin;
+
+
+-- SELECT * FROM admin; to admin-- 
+-- SELECT * FROM admin_pass; to admin_pass-- 
+-- SELECT * FROM all_pagess; to all_pages-- 
+-- SELECT * FROM contact; to contact-- 
+-- SELECT * FROM courses; to course-- 
+-- SELECT * FROM header_footer; to header_footer-- 
+-- SELECT * FROM home; to home-- 
+-- SELECT * FROM imagechanges; to imagechangess-- 
+-- SELECT * FROM register; to register-- 
+-- SELECT * FROM registerpage; to registerpage-- 
+-- SELECT * FROM resource_gallery_img; to resource_gallery_img-- 
+-- SELECT * FROM testimonial; to testimonial-- 
+
+
+CREATE DATABASE IF NOT EXISTS pp_classes;
+
+CREATE TABLE IF NOT EXISTS admin (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fullname VARCHAR(255),
+    about TEXT,
+    company VARCHAR(255),
+    job VARCHAR(255),
+    address VARCHAR(255),
+    phone VARCHAR(20),
+    email_id VARCHAR(255),
+    profileimage VARCHAR(255)
+);
+INSERT INTO admin (fullname, about, company, job, address, phone, email_id, profileimage)
+VALUES ('John Doe', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'ABC Company', 'Developer', '123 Main St, City', '123-456-7890', 'john@example.com', 'profile.jpg');
+drop table admin;
+select * from admin;
+
+CREATE TABLE IF NOT EXISTS admin_pass (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) UNIQUE,
+    password VARCHAR(255)
+);
+INSERT INTO admin_pass (email, password) VALUES
+    ('admin1@gmail.com', 123456),
+    ('admin@gmail.com', 123456),
+    ('admin3@gmail.com', 123456);
+select * from admin_pass;
+
+CREATE TABLE IF NOT EXISTS all_pages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    regular TEXT,
+    shortterm TEXT,
+    crash TEXT,
+    contact VARCHAR(100),
+    contactus_description TEXT
+);
+ALTER TABLE all_pages
+ADD COLUMN course_type VARCHAR(50) AFTER contactus_description;
+
+INSERT INTO all_pages (regular, shortterm, crash, contact, contactus_description)
+VALUES ('Regular course content', 'Short-term course content', 'Crash course content', 'Contact information', 'Description for contact us');
+
+INSERT INTO all_pages (regular, shortterm, crash, contact, contactus_description,course_type)
+VALUES ('Regular course content', 'Short-term course content', 'Crash course content', 'Contact information', 'Description for contact us','regular');
+
+INSERT INTO all_pages (regular, shortterm, crash, contact, contactus_description,course_type)
+VALUES ('Regular course content', 'Short-term course content', 'Crash course content', 'Contact information', 'Description for contact us','shortterm');
+
+INSERT INTO all_pages (regular, shortterm, crash, contact, contactus_description,course_type)
+VALUES ('Regular course content', 'Short-term course content', 'Crash course content', 'Contact information', 'Description for contact us','crash');
+
+select * from all_pages;
+
+
+CREATE TABLE IF NOT EXISTS contact (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    phone VARCHAR(20),
+    altphone VARCHAR(20),
+    message TEXT
+);
+
+INSERT INTO contact (name, email, phone, altphone, message)
+VALUES ('John Doe', 'john@example.com', '1234567890', '9876543210', 'This is a sample message.'),('Alice Smith', 'alice@example.com', '1112223333', '9998887777', 'Another message here.'),('Bob Johnson', 'bob@example.com', '4445556666', NULL, 'One more message for testing.');
+
+select * from contact;
+
+CREATE TABLE IF NOT EXISTS courses (
+    course_id INT AUTO_INCREMENT PRIMARY KEY,
+    course_type VARCHAR(50),
+    board VARCHAR(50),
+    grade VARCHAR(50),
+    program VARCHAR(100),
+    duration VARCHAR(50),
+    status INT DEFAULT 0
+);
+
+INSERT INTO courses (course_type, board, grade, program, duration)
+VALUES 
+    ('regular', 'CBSE', 'Grade 10', 'Science', '1 year'),
+    ('shortterm', 'State Board', 'Grade 12', 'Mathematics', '6 months'),
+    ('crash course', 'ICSE', 'Grade 8', 'English', '3 months');
+select * from courses;
+
+
+CREATE TABLE IF NOT EXISTS header_footer (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    home VARCHAR(100),
+    register VARCHAR(100),
+    explore VARCHAR(100),
+    regular VARCHAR(100),
+    shortterm VARCHAR(100),
+    crash VARCHAR(100),
+    resource VARCHAR(100),
+    galleryname VARCHAR(100),
+    contactus VARCHAR(100),
+    aboutus_Head VARCHAR(100),
+    Alumni_Speaks VARCHAR(100),
+    Company_Header VARCHAR(100),
+    Service_Header VARCHAR(100),
+    Reach_Us_At VARCHAR(100),
+    copyright VARCHAR(100),
+    Address VARCHAR(100),
+    Phone VARCHAR(20),
+    Email VARCHAR(50)
+);
+
+INSERT INTO header_footer (
+    home, register, explore, regular, shortterm, crash, resource, galleryname, 
+    contactus, aboutus_Head, Alumni_Speaks, Company_Header, Service_Header, 
+    Reach_Us_At, copyright, Address, Phone, Email
+) VALUES (
+    'Home', 'Register', 'Explore', 'Regular', 'Short-term', 'Crash', 'Resource', 
+    'Gallery Name', 'Contact Us', 'About Us', 'Alumni Speaks', 'Company Header', 
+    'Service Header', 'Reach Us At', 'Copyright', 'Address', 'Phone', 'Email'
+);
+SELECT * FROM header_footer;
+
+CREATE TABLE IF NOT EXISTS home (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    our_learnershead VARCHAR(100),
+    our_learners TEXT,
+    time_managementhead VARCHAR(100),
+    time_management TEXT,
+    for_learnershead VARCHAR(100),
+    for_learners TEXT,
+    image VARCHAR(255),
+    introductionhead VARCHAR(100),
+    introduction TEXT,
+    achievementhead VARCHAR(100),
+    achievement TEXT
+);
+
+INSERT INTO home (
+    our_learnershead, our_learners, time_managementhead, time_management, 
+    for_learnershead, for_learners, image, introductionhead, introduction, 
+    achievementhead, achievement
+) VALUES (
+    'Our Learners Head', 'Our Learners Content', 'Time Management Head', 
+    'Time Management Content', 'For Learners Head', 'For Learners Content', 
+    'image.jpg', 'Introduction Head', 'Introduction Content', 'Achievement Head', 
+    'Achievement Content'
+);
+select * from home;
+
+
+CREATE TABLE IF NOT EXISTS imagechangess (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    slider_image VARCHAR(255),
+    slider_image_heading VARCHAR(100),
+    slider_image_description TEXT
+);
+
+INSERT INTO imagechangess (
+    slider_image, slider_image_heading, slider_image_description
+) VALUES (
+    'slider1.jpg', 'Slider 1 Heading', 'Description for Slider 1'
+);
+select * from imagechangess;
+drop table imagechanges;
+
+
+CREATE TABLE IF NOT EXISTS register (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fullname VARCHAR(100),
+    phone VARCHAR(20),
+    fatherName VARCHAR(100),
+    fathernumber VARCHAR(20),
+    email VARCHAR(100),
+    address TEXT,
+    standard VARCHAR(50),
+    schoolname VARCHAR(100),
+    Board VARCHAR(50),
+    gender VARCHAR(10),
+    submission_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO register (
+    fullname, phone, fatherName, fathernumber, email, address, standard, schoolname, Board, gender
+) VALUES (
+    'John Doe', '1234567890', 'Tom Doe', '9876543210', 'johndoe@example.com', '123 Main St, City', '10th', 'ABC School', 'State Board', 'Male'
+);
+
+select * from register;
+
+
+CREATE TABLE IF NOT EXISTS registerpage (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    studentregistration TEXT,
+    our_tutorialHead VARCHAR(100),
+    our_tutorial TEXT,
+    our_tutorial_image VARCHAR(100),
+    our_missionhead VARCHAR(100),
+    our_mission TEXT,
+    our_vissionhead VARCHAR(100),
+    our_vission TEXT
+);
+
+INSERT INTO registerpage (
+    studentregistration, our_tutorialHead, our_tutorial, our_tutorial_image, our_missionhead, our_mission, our_vissionhead, our_vission
+) VALUES (
+    'Student Registration Information', 'Our Tutorial Headline', 'Details about our tutorial...', 'tutorial_image.jpg',
+    'Our Mission Headline', 'Details about our mission...', 'Our Vision Headline', 'Details about our vision...'
+);
+
+
+select * from registerpage;
+
+CREATE TABLE IF NOT EXISTS resource_gallery_img (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image_type VARCHAR(50),
+    image_source VARCHAR(100),
+    description TEXT
+);
+
+INSERT INTO resource_gallery_img (image_type, image_source, description)
+VALUES 
+    ('Type A', 'image1.jpg', 'Description for image 1'),
+    ('Type B', 'image2.jpg', 'Description for image 2'),
+    ('Type C', 'image3.jpg', 'Description for image 3');
+select * from resource_gallery_img;
+
+
+CREATE TABLE IF NOT EXISTS testimonial (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    phone VARCHAR(20),
+    email VARCHAR(100),
+    passing_year INT,
+    present_status VARCHAR(100),
+    working_place VARCHAR(100),
+    memorable_event TEXT,
+    status INT default 0
+);
+
+INSERT INTO testimonial (name, phone, email, passing_year, present_status, working_place, memorable_event, status)
+VALUES 
+    ('John Doe', '1234567890', 'john@example.com', 2022, 'Working at ABC Corp', 'XYZ Corporation', 'Memorable event description', 1),
+    ('Jane Smith', '9876543210', 'jane@example.com', 2021, 'Freelancer', 'Freelance', 'Another memorable event description', 1),
+    ('Alex Johnson', '5555555555', 'alex@example.com', 2020, 'Retired', 'Retirement', 'Yet another memorable event description', 0);
+select * from testimonial;
