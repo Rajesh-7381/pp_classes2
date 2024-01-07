@@ -393,3 +393,16 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2023-12-15 21:13:39
+
+DELIMITER //
+
+CREATE PROCEDURE GetAdminByCredentials(IN userEmail VARCHAR(255), IN userPassword VARCHAR(255))
+BEGIN
+    SELECT *
+    FROM admin_pass
+    WHERE email = userEmail AND password = userPassword;
+END //
+
+DELIMITER ;
+CALL GetAdminByCredentials('admin1@gmail.com', 123456);
+
