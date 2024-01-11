@@ -48,10 +48,10 @@ include("./header.php"); ?>
                         <th style='text-align: center; background:black; color:white'>Name</th>
                         <th style='text-align: center; background:black; color:white'>Phone</th>
                         <th style='text-align: center; background:black; color:white'>Email</th>
-                        <th style='text-align: center; background:black; color:white'>Passing Year</th>
-                        <th style='text-align: center; background:black; color:white'>Present Status</th>
-                        <th style='text-align: center; background:black; color:white'>Working Place</th>
-                        <th style='text-align: center; background:black; color:white'>Memorable Event</th>
+                         <th style='text-align: center; background:black; color:white'>Passing Year</th>
+                         <th style='text-align: center; background:black; color:white'>Present Status</th>
+                         <th style='text-align: center; background:black; color:white'>Working Place</th>
+                         <th style='text-align: center; background:black; color:white'>Memorable Event</th>
                         <th style='text-align: center; background:black; color:white'>Operations</th>
                       </tr>
                     </thead>
@@ -66,10 +66,10 @@ include("./header.php"); ?>
                     echo '<td>' . $testimonial["name"] . '</td>';
                     echo '<td>' . $testimonial["phone"] . '</td>';
                     echo '<td>' . $testimonial["email"] . '</td>';
-                    echo '<td>' . $testimonial["passing_YEAR"] . '</td>';
-                    echo '<td>' . $testimonial["presentSTATUS"] . '</td>';
-                    echo '<td>' . $testimonial["workingPLACE"] . '</td>';
-                    echo '<td>' . $testimonial["memoryableEVENT"] . '</td>';
+                    echo '<td>' . $testimonial["passing_year"] . '</td>';
+                    echo '<td>' . $testimonial["present_status"] . '</td>';
+                    echo '<td>' . $testimonial["working_place"] . '</td>';
+                    echo '<td>' . $testimonial["memorable_event"] . '</td>';
                     echo '<td class="d-flex">'; 
 
                     if ($testimonial["status"] == 0) {

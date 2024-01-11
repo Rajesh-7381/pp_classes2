@@ -145,7 +145,8 @@ if ($result && mysqli_num_rows($result) > 0) {
                   <div class="d-flex justify-content-between align-items-center">
                     <button type="submit" name="submit" class="btn btn-primary">Login</button>
                     <a href="javascript:void(0);" onclick="openForgotPasswordModal();" class="text-body">Forgot password?</a>
-                    <a href="./Register.php" class="text-body">Register here?</a>
+                    <a href="Register.php" class="text-body">Register here?</a>
+                    <!-- <a href="./jwt-token/Register.php" class="text-body">Register here?</a> -->
                   </div>
 
                 </form>
